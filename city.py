@@ -41,7 +41,7 @@ class ParkingLot:
         self.name = ""
         self.coords = {}
         self.total = 0
-        self.free = 0
+        self.free = -1
         self.state = ""
         self.id = ""
         self.forecast = False
@@ -56,19 +56,5 @@ class ParkingLot:
         self[key] = name
         
     def to_dict(self):
-        return {
-            "name": self.name,
-            "coords": self.coords,
-            "total": self.total,
-            "free": self.free,
-            "state": self.state,
-            "id": self.id,
-            "forecast": self.forecast,
-            "region": self.region,
-            "address": self.address,
-            "lot_type": self.lot_type,
-            "opening_hours": self.opening_hours,
-            "fee_price": self.fee_price if hasattr(self, 'fee_price') else "",
-            "fee_hours": self.fee_hours,
-            "url": self.url
-        }
+        # don't add the fields that are empty or free if it's -1
+        return {k: v for k, v in self.__dict__.items() if v and not (k == "free" and v == -1)}

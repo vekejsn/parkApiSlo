@@ -35,6 +35,7 @@ class CityKranj(City):
                     park_lot.total = lot['spaces_regular']
                     park_lot.free = lot['spaces_regular_available']
                     park_lot.fee_hours, park_lot.fee_price = ical_to_osm(lot['prices']) if lot['prices'] else ""
+                    park_lot.fee_price += "/h"
                     park_lot.opening_hours = ical_to_osm(lot['working_hours']) if lot['working_hours'] else ""
                     park_lot.id = lot['id']
 

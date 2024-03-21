@@ -30,8 +30,26 @@ def return_city(cityId: str):
     return {"error": "City not found"}
     
 
-from city_kranj import CityKranj
+from cities.city_kranj import CityKranj
+from cities.city_trbovlje import CityTrbovlje
+from cities.city_sevnica import CitySevnica
+from cities.city_kostanjevica_na_krki import CityKostanjevicaNaKrki
+from cities.city_sostanj import CitySostanj
+from cities.city_radece import CityRadece
+from cities.city_mirna_pec import CityMirnaPec
+from cities.city_straza import CityStraza
+from cities.city_trebnje import CityTrebnje
+from cities.city_velenje import CityVelenje
 
 if __name__ == "__main__":
     cities['Kranj'] = CityKranj()
+    cities['Trbovlje'] = CityTrbovlje()
+    cities['Sevnica'] = CitySevnica()
+    cities['Kostanjevica Na Krki'] = CityKostanjevicaNaKrki()
+    cities['Sostanj'] = CitySostanj()
+    cities['Radeče'] = CityRadece()
+    cities['Mirna Peč'] = CityMirnaPec()
+    cities['Straža'] = CityStraza()
+    cities['Trebnje'] = CityTrebnje()
+    cities['Velenje'] = CityVelenje()
     uvicorn.run(app, port=16000)
