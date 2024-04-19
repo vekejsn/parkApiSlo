@@ -52,4 +52,4 @@ if __name__ == "__main__":
     cities['Straža'] = CityStraza()
     cities['Trebnje'] = CityTrebnje()
     cities['Velenje'] = CityVelenje()
-    uvicorn.run(app, port=16000)
+    uvicorn.run(app, port=16000, host="0.0.0.0")
