@@ -34,7 +34,8 @@ class CityRadece(City):
                 park_lot.state = "nodata"
                 park_lot.total = int(lot['št. parkirnih mest'])
                 park_lot.free = 0
-                park_lot.id = hashlib.md5(f'{park_lot.name.encode()}/{str(park_lot.total).encode()}').hexdigest()
+                lot_id = f'{park_lot.name}/{park_lot.total}'
+                park_lot.id = hashlib.md5(lot_id.encode()).hexdigest()
                 self.lots.append(park_lot)
         except Exception as e:
             print(f"Error loading parking lots: {e}")
