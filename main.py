@@ -48,6 +48,7 @@ from cities.city_straza import CityStraza
 from cities.city_trebnje import CityTrebnje
 from cities.city_velenje import CityVelenje
 from cities.city_celje import CityCelje
+from cities.city_trzic import CityTrzic
 
 if __name__ == "__main__":
     cities['Kranj'] = CityKranj()
@@ -61,4 +62,6 @@ if __name__ == "__main__":
     cities['Trebnje'] = CityTrebnje()
     cities['Velenje'] = CityVelenje()
     cities['Celje'] = CityCelje()
+    cities['Tržič'] = CityTrzic()
+    
     uvicorn.run(app, port=16000, host="0.0.0.0")
