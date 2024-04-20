@@ -68,7 +68,7 @@ class CityCelje(City):
             self.data_source = "https://centralka.celje.si/"
             for parking_group in data['parkingGroups']:
                 for parking_place in parking_group['parkingPlaces']:
-                    if len(parking_place['parkingPlaceCharts']) == 0:
+                    if len(parking_place['parkingPlaceCharts']) == 0 or 'Test' in parking_place['name']:
                         continue
                     park_lot = ParkingLot()
                     park_lot.name = parking_place['name']
