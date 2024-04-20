@@ -29,6 +29,9 @@ class CityRadece(City):
             for lot in lots:
                 park_lot = ParkingLot()
                 park_lot.name = lot['naslov'].replace('è', 'č') # also fuck you
+                # if we already have a parking lot with this name, append something to the name                
+                if park_lot.name in [lot.name for lot in self.lots]:
+                    park_lot.name += " - I"
                 coords = d96_to_wgs84(float(lot['koordinata y (D96/TM)']), float(lot['koordinata x (D96/TM)']))
                 park_lot.coords = {"lat": coords[0], "lng": coords[1]}
                 park_lot.state = "nodata"
