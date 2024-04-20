@@ -3,10 +3,10 @@ from datetime import datetime
 
 def convert_time_to_osm_format(time_str):
     try:
-        return datetime.strptime(time_str, '%H:%M:%S').strftime('%H:%M')
+        return datetime.strptime(time_str, '%H:%M:%S').strftime('%H:%M') if time_str else ""
     except ValueError:
         try:
-            return datetime.strptime(time_str, '%H.%M').strftime('%H:%M')
+            return datetime.strptime(time_str, '%H.%M').strftime('%H:%M') if time_str else ""
         except ValueError:
             return time_str
 

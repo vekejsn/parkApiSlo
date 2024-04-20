@@ -11,6 +11,7 @@ pyproj = "*"
 pytz = "*"
 fastapi-cache2 = "*"
 chardet = "*"
+shapely = "*"
 
 [dev-packages]
 
