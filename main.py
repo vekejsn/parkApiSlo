@@ -18,6 +18,11 @@ def return_cities():
         "server_version": "1.0.0",
         "reference": "https://github.com/offenesdresden/ParkAPI",
         "cities": {cities[city].get_id(): {
+            "active_support": false,
+            "attribution": None,
+            "source": "",
+            "url": "",
+            "coords": {"lat": 0, "lng": 0},
             "name": city
         } for city in cities}
     }
