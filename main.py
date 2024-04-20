@@ -17,7 +17,9 @@ def return_cities():
         "api_version": "1.0",
         "server_version": "1.0.0",
         "reference": "https://github.com/offenesdresden/ParkAPI",
-        "cities": {city: cities[city].get_id() for city in cities}
+        "cities": {cities[city].get_id(): {
+            "name": city
+        } for city in cities}
     }
     
 @app.get("/{cityId}")
