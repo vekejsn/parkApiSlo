@@ -36,7 +36,7 @@ class CityTrebnje(City):
                 park_lot.state = "nodata"
                 park_lot.total = int(lot['Število parkirnih mest'])
                 # park_lot.free = 0
-                park_lot.id = hashlib.md5(f'{park_lot.name.encode()}/{park_lot.total}').hexdigest()
+                park_lot.id = hashlib.md5(f'{park_lot.name.encode()}/{str(park_lot.total).encode()}').hexdigest()
                 self.lots.append(park_lot)
         except Exception as e:
             print(f"Error loading parking lots: {e}")
